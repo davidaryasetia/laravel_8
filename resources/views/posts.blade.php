@@ -3,21 +3,15 @@
     @section('container')
     <h2>Posts Category</h2>
     @foreach ($posts as $post)
-    <article class="mb-5">
+
+    <article class="mb-5 border-bottom pb-4">
         <h2>
-           <a href="/posts/{{ $post->slug }}"> {{$post->title}} </a>
+           <a href="/posts/{{ $post->slug }}" class="text-decoration-none"> {{$post->title}} </a>
         </h2>
-        <h5>By:  {{$post->author}} </h5>
+    <p>by. <a href="#" class="text-decoration-none"> {{$post->user->name}} </a> in <a href="/categories/{{$post->category->slug}}" class="text-decoration-none"> {{$post->category->name}}</p></a>
         <p> {{$post->excerpt}} </p>
+
+        <a href="/posts/{{$post->slug}}" class="text-decoration-none">Read More</a>
     </article>
         @endforeach
-
     @endsection
-
-{{--
-$post::create([
-    'title' => 'judul ketiga3',
-    'slug' => 'judul-ketiga',
-    'excerpt' => 'Lorem ipsum pertama dolor sit amet consecte',
-    'body' => '<p>Reiciendis nemo optio maiores aut obcaecati saepe unde earum! Fugiat possimus amet vero voluptate ullam, eveniet quas odit iste recusandae unde providentsaepe distinctio iure laborum placeat at voluptatem deserunt tenetur adipisci.</p><p> Molestias, distinctio dolore. Mollitia deleniti, nemo suscipit eaque voluptatibus omnis laudantium, pariatur eveniet, totam incidunt vel corporis debitis quod perspiciatis asperiores culpa aliquam. Dolore temporibus quam laudantium debitis doloremque cum rerum natus laborum animi? Maxime nihil, aperiam ullam minus, velit expedita consequatur </p><p>impedit beatae, numquam reprehenderit laborumvoluptates itaque dolore nemo aspernatur molestias voluptas. Quo ipsa dolores, omnis voluptatumneque delectus id molestiae expedita quaerat perferendis maiores, debitis optio sapiente sint illum enim quis vel laboriosam tenetur harum quia ex nihil eius. Sit sequi aperiam nemo enim necessitatibus laborum laudantium?</p>'
-]) --}}
