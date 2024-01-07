@@ -6,7 +6,6 @@
     <ul>
         <li>
            <a href="/categories/{{ $category->slug }}"> {{$category->name}} </a>
-
         </li>
     </ul>
         @endforeach
