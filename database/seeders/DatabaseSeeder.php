@@ -1,4 +1,4 @@
-ca<?php
+<?php
 
 namespace Database\Seeders;
 
@@ -33,6 +33,11 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programming'
+        ]);
+
+        Category::create([
+            'name' => 'Web Design',
+            'slug' => 'web-design'
         ]);
 
         Category::create([

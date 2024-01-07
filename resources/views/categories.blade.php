@@ -2,19 +2,22 @@
 
     @section('container')
     <h1 class="mb-5">{{ $title }}</h1>
-    @foreach ($categories as $category)
-    <ul>
-        <li>
-           <a href="/categories/{{ $category->slug }}"> {{$category->name}} </a>
-        </li>
-    </ul>
-        @endforeach
-    @endsection
 
-{{--post
-$post::create([
-    'title' => 'judul ketiga3',
-    'slug' => 'judul-ketiga',
-    'excerpt' => 'Lorem ipsum pertama dolor sit amet consecte',
-    'body' => '<p>Reiciendis nemo optio maiores aut obcaecati saepe unde earum! Fugiat possimus amet vero voluptate ullam, eveniet quas odit iste recusandae unde providentsaepe distinctio iure laborum placeat at voluptatem deserunt tenetur adipisci.</p><p> Molestias, distinctio dolore. Mollitia deleniti, nemo suscipit eaque voluptatibus omnis laudantium, pariatur eveniet, totam incidunt vel corporis debitis quod perspiciatis asperiores culpa aliquam. Dolore temporibus quam laudantium debitis doloremque cum rerum natus laborum animi? Maxime nihil, aperiam ullam minus, velit expedita consequatur </p><p>impedit beatae, numquam reprehenderit laborumvoluptates itaque dolore nemo aspernatur molestias voluptas. Quo ipsa dolores, omnis voluptatumneque delectus id molestiae expedita quaerat perferendis maiores, debitis optio sapiente sint illum enim quis vel laboriosam tenetur harum quia ex nihil eius. Sit sequi aperiam nemo enim necessitatibus laborum laudantium?</p>'
-]) --}}
+
+    <div class="container">
+        <div class="row">
+            @foreach($categories as $category)
+            <div class="col-md-4">
+                <a href="/categories/{{$category->slug}}">
+                <div class="card text-bg-dark">
+                    <img src="https://source.unsplash.com/random/640×320?{{$category->name}}" class="card-img-top" alt="{{$category->name}}" class="card-img" alt="{{$category->name}}">
+                    <div class="card-img-overlay d-flex align-items-center p-0">
+                      <h5 class="card-title text-center flex-fill p-4 fs-3" style="background-color: rgba(0,0,0,0.7)">{{$category->name}}</h5>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            @endforeach()
+        </div>
+    </div>
+    @endsection

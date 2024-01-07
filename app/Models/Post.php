@@ -17,6 +17,7 @@ class Post extends Model
         'body'
     ];
 
+    protected $with = ['category', 'author'];
 
     // make relationship
     public function category()
